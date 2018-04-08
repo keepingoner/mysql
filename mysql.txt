@@ -1,0 +1,37 @@
+查看创建表时的结构
+show create table  tabelname \G
+
+删除表里的数据，重新创建
+truncate table tablenaem
+
+mysql还可以进行计算
+select(4+5)   select (2+1),(5*21)
+
+mysql 使用load data infill
+
+
+方法二：
+查询都自动写入文件：
+mysql> pager cat > /tmp/test.txt ;
+PAGER set to 'cat > /tmp/test.txt'
+之后的所有查询结果都自动写入/tmp/test.txt'，并前后覆盖
+mysql> select * from table ;
+30 rows in set (0.59 sec)
+在框口不再显示查询结果
+
+
+取消pager  使用\n
+
+
+
+mysq添加查询历史sql语句功能
+对于mysql5.1以后的版本，可以通过以下方法
+set global log_output = 'table';
+
+set global general_log = 'on'
+
+在mysql里 的general_log 可以看到日志
+也可以导出到文件
+SET GLOBAL log_output = “FILE”;
+SET GLOBAL general_log_file = “/path/to/your/logfile.log”
+SET GLOBAL general_log = ‘ON’;
